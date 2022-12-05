@@ -1,8 +1,9 @@
 const express = require("express")
-const products = require("./routes/products")
-const users = require("./routes/users")
+// const products = require("./routes/products")
+// const users = require("./routes/users")
 const app = express()
-app.set("View engine", "ejs")
+
+app.set("view engine", "ejs")
 app.get("/", (req,res)=>{
     res.render("index")
 })
