@@ -2,7 +2,7 @@ const express = require("express");
 
 const router =  express.Router();
 
-router.use("/", ( req, res) => {
+router.get("/", ( req, res) => {
     res.send("This is Users");
 });
 
@@ -10,14 +10,20 @@ router.use("/", ( req, res) => {
 //     res.send("This is users list ");
 // });
 
-
-
-
-router.use('/get-users-list', (req, res)=>{
-    res.send("Get Req for prudcts");
+router.get("/new", (req,res) => {
+res.send("NEw users form")
 })
-router.post("/create-new-user",(req,res)=>{
-    res.send("CREATING NEW USERS...")
+
+router.route("/:id")
+.get((req,res) => {
+    res.send(`Get User with Id ${req.params.id}`)
 })
+.put((req,res) => {
+    res.send(`Delete User with ID ${req.params.id}`)
+})
+
+// router.get("/:id", (req,res)=> {
+//     res.send(`USER with an id ${req.params.id}`)
+// })
 
 module.exports = router;
