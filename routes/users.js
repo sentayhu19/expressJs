@@ -1,7 +1,6 @@
 const express = require("express");
 
 const router =  express.Router();
-
 router.get("/", ( req, res) => {
     res.send("This is Users");
 });
@@ -9,6 +8,7 @@ router.get("/", ( req, res) => {
 // router.use("/get-users-list",( req, res) => {
 //     res.send("This is users list ");
 // });
+
 
 router.get("/new", (req,res) => {
 res.send("NEw users form")
@@ -25,5 +25,6 @@ router.route("/:id")
 // router.get("/:id", (req,res)=> {
 //     res.send(`USER with an id ${req.params.id}`)
 // })
+
 
 module.exports = router;
